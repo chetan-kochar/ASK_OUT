@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #555;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #image-container {
+            width: 600px;
+            height: 600px;
+            margin: 10px;
+        }
+
+        #image-container img {
+            width: 100%;
+            height: 100%;
+            
+            border-radius: 100px;
+        }
+
+        .button-container {
+            margin-top: 10px;
+        }
+
+        .btn-next {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-next:hover {
+            background-color: #ff3f2f;
+        }
+    </style>
+</head>
+<body>
+    :>
+    <div id="image-container">
+        <img id="pet-image" src="" alt="Pet Image">
+    </div>
+    <div class="button-container">
+        <button class="btn-next" onclick="nextImage()">Next Image</button>
+    </div>
+
+    <script>
+        const dogImages = [
+            'https://media.tenor.com/iwQLVH9q8D0AAAAM/hi-hello.gif',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-rfQeJpdzEWUq0pojbVWM9cK1MuCPyK-mOvYqCE_4mp2ndL6EueUYDZMmiDubdQpBpL8&usqp=CAU',
+            'https://i.pinimg.com/474x/43/8b/68/438b6853849876bf31252b85b9331326.jpg',
+            'https://i.chzbgr.com/full/9310841856/h0597503B/dog-because-theres-were-your-nothing-like-you-parents-from-on-earth-outerspace',
+            'https://i.chzbgr.com/full/6865615360/h24194009/i-must-have-been-a-good-boy-cause-youre-a-real-treat'
+        ];
+
+        const catImages = [
+            'https://i.pinimg.com/736x/3d/4b/18/3d4b1819276e4d54f88ccf3067c7df96.jpg',
+            'https://i.pinimg.com/736x/4a/af/51/4aaf51494c089f934e264a10c9cb034e.jpg',
+            'https://lh3.googleusercontent.com/proxy/DLa-R5ticZblWgC60h09RGayT86QyJp04Wxd_jRWHGw39N8x61DWVC8ZRBRHlwb-OUWOZk_qVX8wKhU33KLf8g1aAm9XplEUyEg0IBrTRjrnztadBto1r0zrGIG8WE70ypYYGLnXZYmWrbRrZe2rVfDRcBRf8HpDa-4nCw',"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2NyBO7YnWr2opNix2xzY_EjhPvMQGkXmY-A&s"
+            ,
+            'https://i.chzbgr.com/full/9797060096/h9AAEBAA0/hat-police-do-know-fast-were-going-fell-heaven-made-with-mematic',
+            'https://i.imgflip.com/47kvbb.jpg'
+        ];
+
+        let currentImageIndex = 0;
+        let pet = localStorage.getItem('pet');
+        let images = pet === 'dog' ? dogImages : catImages;
+
+        function updateImage() {
+            const petImage = document.getElementById('pet-image');
+            petImage.src = images[currentImageIndex];
+        }
+
+        function nextImage() {
+            if (currentImageIndex < images.length - 1) {
+                currentImageIndex++;
+                updateImage();
+            } else {
+                // After the last image, redirect to the date_question_page.html
+                window.location.href = "date_question_page.html";
+            }
+        }
+
+        // Initial image load
+        updateImage();
+    </script>
+</body>
+</html>

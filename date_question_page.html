@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresher's Party Date</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #555;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .option-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you go to fresher's Party with me? 🥹</h1>
+    <div class="option-container">
+        <div class="option" onclick="displayMessage('yes')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlO-AlDTwxa6OT7gfAVKp4fat_pw3IWig3tnQqmC8Qrutxa0cumWGh7bO0RSgEev-4dak&usqp=CAU" alt="Yes">
+            <p>Yes</p>
+        </div>
+        <div class="option" onclick="displayMessage('no')">
+            <img src="https://templated.co/meme-templates/wp-content/uploads/crying-sad-cat-meme-template-1024x547.jpg" alt="No">
+            <p>No</p>
+        </div>
+    </div>
+    <div class="message" id="response-message"></div>
+
+    <script>
+        function displayMessage(response) {
+            const messageElement = document.getElementById('response-message');
+            if (response === 'yes') {
+                messageElement.textContent = "Awww Thank You ❤️";
+            } else {
+                messageElement.textContent = "Pleaseeee😭";
+            }
+        }
+    </script>
+</body>
+</html>

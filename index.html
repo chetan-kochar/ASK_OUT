@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog or Cat Person</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #555;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .btn {
+            width: 170px;
+            height: 170px;
+            border: none;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-dog {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81JLRavFfEwqsqx7XqE7t1XvbXH5pI3ZExQ&s');
+        }
+        
+        .btn-cat {
+            background-image: url('https://i.natgeofe.com/k/ad9b542e-c4a0-4d0b-9147-da17121b4c98/MOmeow1_square.png');
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you a dog person or a cat person?</h1>
+    <div class="button-container">
+        <button class="btn btn-dog" onclick="selectPet('dog')"></button>
+        <button class="btn btn-cat" onclick="selectPet('cat')"></button>
+    </div>
+
+    <script>
+        function selectPet(pet) {
+            // Store the selected pet in localStorage to pass to the next page
+            localStorage.setItem('pet', pet);
+            // Redirect to the new image page
+            window.location.href = "image_page.html";
+        }
+    </script>
+</body>
+</html>

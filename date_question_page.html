@@ -28,7 +28,6 @@
         .option-container {
             display: flex;
             gap: 50px;
-            position: relative;
         }
 
         .option {
@@ -37,7 +36,6 @@
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            position: absolute;
         }
 
         img {
@@ -73,11 +71,11 @@
 <body>
     <h1>Will you go to fresher's Party with me? 🥹</h1>
     <div class="option-container">
-        <div class="option" onclick="displayMessage('yes')" style="left: -80px;">
+        <div class="option" onclick="displayMessage('yes')">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlO-AlDTwxa6OT7gfAVKp4fat_pw3IWig3tnQqmC8Qrutxa0cumWGh7bO0RSgEev-4dak&usqp=CAU" alt="Yes">
             <p>Yes</p>
         </div>
-        <div class="option" id="no-option" onclick="moveNoButton()" style="right: -80px;">
+        <div class="option" onclick="displayMessage('no')">
             <img src="https://templated.co/meme-templates/wp-content/uploads/crying-sad-cat-meme-template-1024x547.jpg" alt="No">
             <p>No</p>
         </div>
@@ -92,13 +90,6 @@
             } else {
                 messageElement.textContent = "Pleaseeee😭";
             }
-        }
-
-        function moveNoButton() {
-            const noButton = document.getElementById('no-option');
-            const x = Math.random() * 300 - 150;
-            const y = Math.random() * 300 - 150;
-            noButton.style.transform = `translate(${x}px, ${y}px)`;
         }
     </script>
 </body>

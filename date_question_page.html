@@ -22,7 +22,21 @@
             color: #555;
             font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .option-container {
@@ -38,7 +52,7 @@
             cursor: pointer;
         }
 
-        img {
+        .option img {
             width: 150px;
             height: 150px;
             border-radius: 15px;
@@ -46,7 +60,7 @@
             transition: transform 0.2s;
         }
 
-        img:hover {
+        .option img:hover {
             transform: scale(1.1);
         }
 
@@ -60,37 +74,26 @@
             font-size: 1.5rem;
             color: #444;
         }
-
-        footer {
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #666;
-        }
     </style>
 </head>
 <body>
-    <h1>Will you go to fresher's Party with me? 🥹</h1>
+    <h1>Will you go to fresher's Party with me? 😊</h1>
     <div class="option-container">
-        <img src="Ghibli.jpg" alt="My photo">
-    <div class="option" onclick="displayMessage('yes')">
-        <img src="https://i.pinimg.com/736x/5e/8c/67/5e8c67f6ed76ceece5251d597ac4a1ef.jpg" alt="Yes">
-        <p>Haaann Bilkul ❤️</p>
-    </div>
-    <div class="option" onclick="displayMessage('no')">
-        <img src="https://i.pinimg.com/736x/4a/6a/01/4a6a019b3cfe64a012ead0980874edd7.jpg" alt="Yesss">
-        <p>Kyu nahi💖</p>
-    </div>
+        <div class="option" onclick="displayMessage('yes')">
+            <img src="https://i.pinimg.com/736x/5e/8c/67/5e8c67f6ed76ceece5251d597ac4a1ef.jpg" alt="Yes">
+            <p>Haaann Bilkul ❤️</p>
+        </div>
+        <div class="option" onclick="displayMessage('no')">
+            <img src="https://i.pinimg.com/736x/4a/6a/01/4a6a019b3cfe64a012ead0980874edd7.jpg" alt="Yesss">
+            <p>Kyu nahi💖</p>
+        </div>
     </div>
     <div class="message" id="response-message"></div>
 
     <script>
         function displayMessage(response) {
             const messageElement = document.getElementById('response-message');
-            if (response === 'yes') {
-                messageElement.textContent = "Awww Thank You ❤️";
-            } else {
-                messageElement.textContent = "Awwww Thank You 💖";
-            }
+            messageElement.textContent = response === 'yes' ? "Awww Thank You ❤️" : "Awwww Thank You 💖";
         }
     </script>
 </body>
